@@ -16,12 +16,13 @@ import com.anikulki.coroutineexample.data.model.News
 import com.anikulki.coroutineexample.ui.base.ViewModelFactory
 import com.anikulki.coroutineexample.ui.newslist.adapter.NewsListAdapter
 import com.anikulki.coroutineexample.ui.newslist.viewmodel.MainViewModel
+import com.anikulki.coroutineexample.ui.newslist.viewmodel.SeriesMainViewModel
 import com.anikulki.coroutineexample.utils.Status
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var mainViewModel: MainViewModel
+    private lateinit var mainViewModel: SeriesMainViewModel
     private lateinit var adapter: NewsListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         mainViewModel = ViewModelProviders.of(
             this,
             ViewModelFactory(ApiHelperImpl(RetrofitBuilder.apiService))
-        ).get(MainViewModel::class.java)
+        ).get(SeriesMainViewModel::class.java)
     }
 
 
