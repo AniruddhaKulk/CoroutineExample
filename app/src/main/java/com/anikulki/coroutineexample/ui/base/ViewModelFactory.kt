@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.anikulki.coroutineexample.data.api.ApiHelper
 import com.anikulki.coroutineexample.data.repository.NewsListRepositoryImpl
 import com.anikulki.coroutineexample.ui.newslist.viewmodel.MainViewModel
+import com.anikulki.coroutineexample.ui.newslist.viewmodel.ParallelMainViewModel
 import com.anikulki.coroutineexample.ui.newslist.viewmodel.SeriesMainViewModel
 import java.lang.IllegalStateException
 
@@ -18,6 +19,10 @@ class ViewModelFactory(private val apiHelper: ApiHelper): ViewModelProvider.Fact
 
         if(modelClass.isAssignableFrom(SeriesMainViewModel::class.java)){
             return SeriesMainViewModel(NewsListRepositoryImpl(apiHelper)) as T
+        }
+
+        if(modelClass.isAssignableFrom(ParallelMainViewModel::class.java)){
+            return ParallelMainViewModel(NewsListRepositoryImpl(apiHelper)) as T
         }
 
         throw IllegalStateException("Unknown class name")
