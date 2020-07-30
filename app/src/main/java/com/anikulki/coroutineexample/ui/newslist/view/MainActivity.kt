@@ -1,7 +1,8 @@
-package com.anikulki.coroutineexample
+package com.anikulki.coroutineexample.ui.newslist.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.anikulki.coroutineexample.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
