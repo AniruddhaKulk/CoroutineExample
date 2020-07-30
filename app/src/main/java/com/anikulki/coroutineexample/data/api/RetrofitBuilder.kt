@@ -13,4 +13,6 @@ object RetrofitBuilder {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+
+    val apiService: ApiService = getRetrofit().create(ApiService::class.java)
 }
